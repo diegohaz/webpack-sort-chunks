@@ -4,7 +4,7 @@
 [![NPM version](https://img.shields.io/npm/v/webpack-sort-chunks.svg?style=flat-square)](https://npmjs.org/package/webpack-sort-chunks)
 [![Build Status](https://img.shields.io/travis/diegohaz/webpack-sort-chunks/master.svg?style=flat-square)](https://travis-ci.org/diegohaz/webpack-sort-chunks) [![Coverage Status](https://img.shields.io/codecov/c/github/diegohaz/webpack-sort-chunks/master.svg?style=flat-square)](https://codecov.io/gh/diegohaz/webpack-sort-chunks/branch/master)
 
-Sorts webpack assets by dependency
+Sorts webpack chunks by dependency
 
 > The source code here is vendored from [html-webpack-plugin/lib/chunksorter.js](https://github.com/jantimon/html-webpack-plugin/blob/master/lib/chunksorter.js)
 
