@@ -1,5 +1,7 @@
 # webpack-sort-chunks
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/diegohaz/webpack-sort-chunks.svg)](https://greenkeeper.io/)
+
 [![Generated with nod](https://img.shields.io/badge/generator-nod-2196F3.svg?style=flat-square)](https://github.com/diegohaz/nod)
 [![NPM version](https://img.shields.io/npm/v/webpack-sort-chunks.svg?style=flat-square)](https://npmjs.org/package/webpack-sort-chunks)
 [![Build Status](https://img.shields.io/travis/diegohaz/webpack-sort-chunks/master.svg?style=flat-square)](https://travis-ci.org/diegohaz/webpack-sort-chunks) [![Coverage Status](https://img.shields.io/codecov/c/github/diegohaz/webpack-sort-chunks/master.svg?style=flat-square)](https://codecov.io/gh/diegohaz/webpack-sort-chunks/branch/master)
