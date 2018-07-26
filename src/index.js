@@ -10,6 +10,7 @@ type ChunkMap = {
   [number]: Chunk,
 }
 
+/** */
 type Compilation = {
   chunkGroups: {},
 }
@@ -62,6 +63,7 @@ const sortWithChunkGroups = (chunkGroups: any, chunkMap: ChunkMap) => {
   return sortedChunks
 }
 
+/** */
 const sortChunks = (chunks: Chunk[], compilation?: Compilation): Chunk[] => {
   // We build a map (chunk-id -> chunk) for faster access during graph building
   const chunkMap = {}
