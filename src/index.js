@@ -40,25 +40,24 @@ const sortWithChunks = (chunks: Chunk[], chunkMap: ChunkMap): Chunk[] => {
 const sortWithChunkGroups = (chunkGroups: any, chunkMap: ChunkMap) => {
   // Add an edge for each parent (parent -> child)
   const edges = chunkGroups.reduce((result, chunkGroup) => result.concat(
-      Array.from(chunkGroup.parentsIterable, parentGroup => [parentGroup, chunkGroup])
-    ), [])
+    Array.from(chunkGroup.parentsIterable, parentGroup => [parentGroup, chunkGroup])
+  ), [])
 
-    // We now perform a topological sorting on chunkGroups and built edges
+  // We now perform a topological sorting on chunkGroups and built edges
   const sortedGroups = toposort.array(chunkGroups, edges)
 
-    // Flatten chunkGroup into chunks
+  // Flatten chunkGroup into chunks
   const sortedChunks = sortedGroups
-      .reduce((result, chunkGroup) => result.concat(chunkGroup.chunks), [])
-      .map(chunk => // Use the chunk from the list passed in, since it may be a filtered list
-        chunkMap[chunk.id])
-          .filter((chunk, index, self) => {
-            // Make sure exists (ie excluded chunks not in nodeMap)
-            const exists = !!chunk
-            // Make sure we have a unique list
-            const unique = self.indexOf(chunk) === index
+    .reduce((result, chunkGroup) => result.concat(chunkGroup.chunks), [])
+    .map(chunk => chunkMap[chunk.id])
+    .filter((chunk, index, self) => {
+      // Make sure exists (ie excluded chunks not in nodeMap)
+      const exists = !!chunk
+      // Make sure we have a unique list
+      const unique = self.indexOf(chunk) === index
 
-            return exists && unique
-          })
+      return exists && unique
+    })
 
   return sortedChunks
 }
