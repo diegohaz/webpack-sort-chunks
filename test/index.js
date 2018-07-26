@@ -20,4 +20,26 @@ describe('sortChunks', () => {
     const chunks = [child, parent]
     expect(sortChunks(chunks)).toEqual([parent, child])
   })
+
+  it('returns sorted chunks using chunkGroup', () => {
+    const parent = { id: 1 }
+    const child = { id: 0, parents: [parent] }
+    const chunks = [child, parent]
+    const parentGroup = {
+      chunks: [parent],
+      parentsIterable: new Set([]),
+    }
+    const childGroup = {
+      chunks: [child],
+      parentsIterable: new Set([parentGroup]),
+    }
+    const compilation = {
+      chunkGroups: [
+        childGroup,
+        parentGroup,
+      ],
+    }
+
+    expect(sortChunks(chunks, compilation)).toEqual([parent, child])
+  })
 })
