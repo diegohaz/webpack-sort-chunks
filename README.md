@@ -18,6 +18,10 @@ Sorts webpack chunks by dependency
 import sortChunks from 'webpack-sort-chunks'
 
 const sortedChunks = sortChunks(stats.chunks)
+
+// If you hold on to the Webpack compilation, pass it as the second argument
+// It will be faster in Webpack >= v4
+const sortedChunks = sortChunks(stats.chunks, compilation)
 ```
 
 ## API
